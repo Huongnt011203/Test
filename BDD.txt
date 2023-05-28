@@ -1,0 +1,11 @@
+1. Thiết lập môi trường(cài python, selenim(pip cho python), framewwork BDD)
+2. Cấu trúc luồng kiểm tra thành các caau lệnh Given, When, Then
+3. Một số công cụ(SpecFlow(cho C#), Cucumber(hầu hết các ngôn ngữ)
+Đặc biệt Cucumber:
+- tạo tệp đặc tả chức năng bằng ngôn ngữ Gherkin(mô tả hành vi, hành vi nghiệp vụ)
+- cấu pháp(Gherkin)
+	Feature: Tiêu đề kịch bản
+  	Given: Điều kiện tiên quyết or bối cảnh
+   	When: Sự kiện
+   	Then: Đầu ra dự kiến
+
