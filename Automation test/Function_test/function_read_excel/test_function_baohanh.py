@@ -1,12 +1,11 @@
 import time
+from time import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
-import random
 import pandas as pd
-import Demo1.DangNhap
-
+import Test_thuong.test_function_dangnhap
+import utilities.utilities_xpath
 def thanh_cong_check(du_lieu):
     try:
         data_frame = pd.read_excel(du_lieu)
@@ -18,38 +17,38 @@ def thanh_cong_check(du_lieu):
             sl = row['sl']
             tt = row['thuTu']
 
-            btn_ChonThem = br.find_element(By.XPATH, "/html/body/form/div[4]/div[2]/div/div[1]/ul/li[4]/ul/li[1]/a")
+            btn_ChonThem = br.find_element(By.XPATH, utilities.utilities_xpath.xpath_btn_chon_them())
             btn_ChonThem.click()
             cbb_nhomSp = br.find_element(By.XPATH,
-                                         "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[1]/div/select")
+                                         utilities.utilities_xpath.xpath_cbb_nhomsp())
             cbb_nhomSp.click()
 
             cbb1 = br.find_element(By.XPATH,
-                                   "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[1]/div/select/option[2]")
+                                   utilities.utilities_xpath.xpath_cbb_nhomsp_4())
             cbb1.click()
             time.sleep(1)
 
             cbb_hangsx = br.find_element(By.XPATH,
-                                         "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[2]/div/select")
+                                         utilities.utilities_xpath.xpath_cbb_hangnsx())
 
             cbb_hangsx.click()
             time.sleep(1)
             nsx = br.find_element(By.XPATH,
-                                  "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[2]/div/select/option[5]")
+                                  utilities.utilities_xpath.xpath_cbb_hangnsx_3())
             nsx.click()
             time.sleep(1)
 
             cbb_model = br.find_element(By.XPATH,
-                                        "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[3]/div/select")
+                                        utilities.utilities_xpath.xpath_cbb_model())
             cbb_model.click()
             time.sleep(1)
             c = br.find_element(By.XPATH,
-                                "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[3]/div/select/option[3]")
+                                utilities.utilities_xpath.xpath_cbb_model_1())
             c.click()
             time.sleep(1)
 
             txt_tenSp = br.find_element(By.XPATH,
-                                        "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[4]/div/input")
+                                        utilities.utilities_xpath.xpath_txt_tensp())
             txt_tenSp.clear()
             txt_tenSp.send_keys(ten_sp)
             if pd.isna(ten_sp):
@@ -58,7 +57,7 @@ def thanh_cong_check(du_lieu):
 
 
             txt_maSp = br.find_element(By.XPATH,
-                                       "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[5]/div/input")
+                                       utilities.utilities_xpath.xpath_txt_masp())
 
             txt_maSp.send_keys(masp)
             time.sleep(5)
@@ -67,10 +66,8 @@ def thanh_cong_check(du_lieu):
                 print(f"Case {index + 1} fail")
                 continue
 
-
-
             txt_bh = br.find_element(By.XPATH,
-                                     "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[6]/div/input")
+                                     utilities.utilities_xpath.xpath_txt_bh())
             txt_bh.send_keys(bh)
             time.sleep(5)
             if pd.isna(bh):
@@ -78,7 +75,7 @@ def thanh_cong_check(du_lieu):
                 continue
 
             txt_sl = br.find_element(By.XPATH,
-                                     "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[9]/div/input")
+                                     utilities.utilities_xpath.xpath_txt_sl())
             txt_sl.send_keys(sl)
             time.sleep(1)
             if pd.isna(sl):
@@ -87,7 +84,7 @@ def thanh_cong_check(du_lieu):
 
             # Nhap thu tu
             txt_stt = br.find_element(By.XPATH,
-                                      "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[10]/div/input")
+                                      utilities.utilities_xpath.xpath_txt_stt())
             txt_stt.send_keys(tt)
             time.sleep(5)
             if pd.isna(tt):
@@ -96,23 +93,25 @@ def thanh_cong_check(du_lieu):
 
             # Chọn còn hàng
             rd_conHang = br.find_element(By.XPATH,
-                                         "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[11]/div/table/tbody/tr/td[1]/input")
+                                         utilities.utilities_xpath.xpath_rd_con_hang())
             rd_conHang.click()
             time.sleep(1)
 
             # Click calendar
             click_calendar = br.find_element(By.XPATH,
-                                             "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[12]/div/div/input")
+                                             utilities.utilities_xpath.xpath_lich_calendar())
             click_calendar.click()
             time.sleep(1)
             # Click checkbox
             click_checkBox = br.find_element(By.XPATH,
-                                             "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[13]/div/input")
+                                             utilities.utilities_xpath.xpath_checkbox())
             click_checkBox.click()
             time.sleep(1)
 
-            btn_capNhat = br.find_element(By.XPATH, "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[9]/div/div/a[1]")
+            btn_capNhat = br.find_element(By.XPATH, utilities.utilities_xpath.xpath_btn_capNhat())
             btn_capNhat.click()
+            time().sleep(2)
+                                
             thongBao1 = str(thongBao)
             if pd.isna(thongBao):  # Kiểm tra nếu thongBao rỗng
                 print(f"Case {index + 1} pass")
@@ -138,8 +137,8 @@ def them(br):
 if __name__ == '__main__':
     br = webdriver.Chrome()
     br.get("http://1.hoctestertop.com/control.panel/")
-    Demo1.DangNhap.thanh_cong(br)
+    Test_thuong.DangNhap.thanh_cong(br)
     them(br)
-    du_lieu = r'E:\baohanh.xlsx'
+    du_lieu = r'E:\Test\Automation test\Du_lieu_test\du_lieu_man_bao_hanh.xlsx'
     thanh_cong_check(du_lieu)
     # rong(br)

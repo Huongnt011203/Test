@@ -2,13 +2,11 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
-import random
 
-import Demo1.DangNhap
+import Test_thuong.test_function_dangnhap
 
 
-def nhom_model_thanhcong(br):
+def nhom_nsx_thanhcong(br):
         btn_ChonThem = br.find_element(By.XPATH, "//*[@id='sidebar']/div/div[1]/ul/li[4]/ul/li[1]/a")
         btn_ChonThem.click()
 
@@ -21,9 +19,13 @@ def nhom_model_thanhcong(br):
 
         cbb_hangsx = br.find_element(By.XPATH,
                                      "//*[@id='ctl00_ContentPlaceHolder1_ucLoadControl_ctl00_ddlMan']")
+        if not cbb_hangsx:
+            print("Case 3 fail - combo nsx rong")
+            return False
 
         cbb_hangsx.click()
         time.sleep(1)
+
         nsx = br.find_element(By.XPATH, "//*[@id='ctl00_ContentPlaceHolder1_ucLoadControl_ctl00_ddlMan']/option[3]")
         nsx.click()
         time.sleep(1)
@@ -84,12 +86,12 @@ def nhom_model_thanhcong(br):
         time.sleep(1)
 
         if br.current_url == "http://1.hoctestertop.com/admin-product/list.aspx":
-            print("Case 5 pass")
+            print("Case 3 pass")
             return True
         else:
-            print("Case 5 fail")
+            print("Case 3 fail")
             return False
-def nhom_model_derong(br):
+def nhom_nsx_derong(br):
         btn_ChonThem = br.find_element(By.XPATH, "//*[@id='sidebar']/div/div[1]/ul/li[4]/ul/li[1]/a")
         btn_ChonThem.click()
 
@@ -100,13 +102,12 @@ def nhom_model_derong(br):
         cbb1.click()
         time.sleep(1)
 
-        cbb_hangsx = br.find_element(By.XPATH,
-                                     "//*[@id='ctl00_ContentPlaceHolder1_ucLoadControl_ctl00_ddlMan']")
-
-        cbb_hangsx.click()
+        cbb_model = br.find_element(By.XPATH,
+                                "//*[@id='ctl00_ContentPlaceHolder1_ucLoadControl_ctl00_ddlModel']")
+        cbb_model.click()
         time.sleep(1)
-        nsx = br.find_element(By.XPATH, "//*[@id='ctl00_ContentPlaceHolder1_ucLoadControl_ctl00_ddlMan']/option[3]")
-        nsx.click()
+        c = br.find_element(By.XPATH, "//*[@id='ctl00_ContentPlaceHolder1_ucLoadControl_ctl00_ddlModel']/option[3]")
+        c.click()
         time.sleep(1)
 
         txt_tenSp = br.find_element(By.XPATH,
@@ -155,10 +156,10 @@ def nhom_model_derong(br):
         time.sleep(1)
 
         if br.current_url == "http://1.hoctestertop.com/admin-product/list.aspx":
-            print("Case 6 pass")
+            print("Case 4 pass")
             return True
         else:
-            print("Case 6 fail")
+            print("Case 4 fail")
             return False
         time.sleep(1)
 def them(br):
@@ -172,8 +173,8 @@ def them(br):
 if __name__ == '__main__':
     br = webdriver.Chrome()
     br.get("http://1.hoctestertop.com/control.panel/")
-    Demo1.DangNhap.thanh_cong(br)
+    Test_thuong.DangNhap.thanh_cong(br)
     them(br)
-    nhom_model_thanhcong(br)
-    nhom_model_derong(br)
+    nhom_nsx_thanhcong(br)
+    nhom_nsx_derong(br)
     time.sleep(2)

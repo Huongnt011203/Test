@@ -1,0 +1,75 @@
+def xpath_cbb_nhomsp():
+    return "//*[@id='ctl00_ContentPlaceHolder1_ucLoadControl_ctl00_ddlForder']"
+def xpath_cbb_nhomsp_4():
+    return "//*[@id='ctl00_ContentPlaceHolder1_ucLoadControl_ctl00_ddlForder']/option[4]"
+def xpath_cbb_hangnsx():
+    return "//*[@id='ctl00_ContentPlaceHolder1_ucLoadControl_ctl00_ddlMan']"
+def xpath_cbb_hangnsx_3():
+    return "//*[@id='ctl00_ContentPlaceHolder1_ucLoadControl_ctl00_ddlMan']/option[3]"
+def xpath_cbb_model():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[3]/div/select"
+def xpath_cbb_model_1():
+    return "//*[@id='ctl00_ContentPlaceHolder1_ucLoadControl_ctl00_ddlModel']/option[1]"
+def xpath_txt_tensp():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[4]/div/input"
+def xpath_txt_masp():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[5]/div/input"
+def xpath_txt_bh():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[6]/div/input"
+def xpath_tab_cau_hinh_seo():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[1]/div[2]/ul/li[8]/a"
+def xpath_txt_metaTitle():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[8]/div/div[1]/div/input"
+def xpath_txt_metaDescription():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[8]/div/div[2]/div/textarea"
+def xpath_txt_metaKeyword():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[8]/div/div[3]/div/textarea"
+def xpath_icon_tagSP():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[8]/div/div[4]/div/a"
+def xpath_click_doiTuong():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[8]/div/div[5]/div/div/div[1]/select/option[1]"
+def xpath_btn_tien():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[8]/div/div[5]/div/div/div[2]/input[1]"
+def xpath_clcik_doi_tuong_1():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[8]/div/div[5]/div/div/div[1]/select/option[2]"
+def xpath_click_doi_tuong_2():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[8]/div/div[5]/div/div/div[3]/select/option[2]"
+def xpath_btn_lui():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[8]/div/div[5]/div/div/div[2]/input[2]"
+
+def xpath_txt_sl():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[9]/div/input"
+def xpath_txt_stt():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[10]/div/input"
+def xpath_rd_con_hang():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[11]/div/table/tbody/tr/td[1]/input"
+def xpath_lich_calendar():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[12]/div/div/input"
+def xpath_checkbox():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[1]/div/div[13]/div/input"
+def xpath_btn_capNhat():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[9]/div/div/a[1]"
+def xpath_btn_chon_them():
+    return "//*[@id='sidebar']/div/div[1]/ul/li[4]/ul/li[1]/a"
+def xpath_tab_tao_km():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[1]/div[2]/ul/li[7]/a"
+def xpath_txt_gia_niem_yet():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[7]/div/div[1]/div/input"
+def xpath_txt_gia_ban():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[7]/div/div[2]/div/input"
+def xpath_txt_loai_tien():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[7]/div/div[3]/div/input"
+def xpath_check_box_noi_bat():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[7]/div/div[4]/div/input[1]"
+def xpath_check_box_moi():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[7]/div/div[4]/div/input[2]"
+def xpath_btn_cap_nhat_km():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[9]/div/div/a[1]"
+def xpath_tab_hinh_anh():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[1]/div[2]/ul/li[4]/a"
+def xpath_them_sl_anh():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[3]/div/div[1]/div/select"
+def xpath_sl_anh():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[3]/div/div[1]/div/select/option[2]"
+def xpath_btn_chon_anh():
+    return "/html/body/form/div[4]/div[3]/div/div/div/div[2]/div[3]/div/div[2]/div[1]/div/div/div/button"
